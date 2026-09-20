@@ -1,4 +1,4 @@
-# Enlight
+<img href="frontend/public/background.png" />
 > *"What you most want, is what you most can't have. And what you most can't have, is what you already had, and lost."* — Christopher Nolan
 
 For someone living with memory issues, recognizing a familiar face does not always mean remembering a name. In Christopher Nolan's *Memento*, Leonard Shelby had to rely on a collection of Polaroid photos, handwritten notes tattooed onto his skin, and scattered files simply to piece together who was standing in front of him. We built **Enlight** to serve as that external memory system, brought into the modern age through ambient intelligent technology rather than fading paper notes.
@@ -31,8 +31,7 @@ Our immediate priority is form factor: moving away from clunky laptop setups tow
 
 Just as importantly, we want to step outside our own engineering bubble. Most of what we built this weekend came from a hunch, guessing at what memory loss feels like and relying on instincts rather than lived reality. Moving forward, we want to listen, spend time with caregivers, and consult specialists to genuinely understand what people living with memory issues face every day. Designing for dignity means replacing guesswork with real solutions, so Enlight can grow into a tool shaped by the actual needs of the community rather than just good intentions.
 
-## Run
-
+## How to run the product
 Run the services in separate terminals in the following order:
 
 1. **Backend Server**
