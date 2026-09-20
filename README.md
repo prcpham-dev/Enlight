@@ -1,4 +1,4 @@
-<img src="./frontend/public/poster.png" width="300" />
+<img src="./frontend/public/poster.png" width="250" />
 
 > *"What you most want, is what you most can't have. And what you most can't have, is what you already had, and lost."* — Christopher Nolan
 
