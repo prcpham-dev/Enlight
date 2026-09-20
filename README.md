@@ -1,4 +1,4 @@
-<img href="frontend/public/background.png" />
+<img href="frontend/public/poster.png" />
 > *"What you most want, is what you most can't have. And what you most can't have, is what you already had, and lost."* — Christopher Nolan
 
 For someone living with memory issues, recognizing a familiar face does not always mean remembering a name. In Christopher Nolan's *Memento*, Leonard Shelby had to rely on a collection of Polaroid photos, handwritten notes tattooed onto his skin, and scattered files simply to piece together who was standing in front of him. We built **Enlight** to serve as that external memory system, brought into the modern age through ambient intelligent technology rather than fading paper notes.
