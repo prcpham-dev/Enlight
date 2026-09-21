@@ -1,4 +1,4 @@
-<img src="./frontend/public/poster.png" width="250" />
+<img src="./client/public/poster.png" width="250" />
 
 > *"What you most want, is what you most can't have. And what you most can't have, is what you already had, and lost."* — Christopher Nolan
 
@@ -37,12 +37,12 @@ Run the services in separate terminals in the following order:
 
 1. **Backend Server**
    ```bash
-   uvicorn backend.main:app --reload
+   uvicorn server.main:app --reload
    ```
 
 2. **Tracking Engine**
    ```bash
-   python -m tracker_engine --camera 1
+   python -m media_engine --camera 1
    ```
 
 3. **Frontend Client**
