@@ -262,7 +262,7 @@ class MouthObserver:
         if not model_path.is_file():
             raise TrackerError(
                 f"Missing mouth landmark model: {model_path}. "
-                "Run 'python -m media_engine download-models'."
+                "Run 'python -m media_engine.models'."
             )
         try:
             options = mp.tasks.vision.FaceLandmarkerOptions(

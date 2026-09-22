@@ -65,8 +65,7 @@ def require_models(model_dir: Path) -> tuple[Path, Path]:
         if not verify_model(path, spec):
             raise ModelError(
                 f"Missing or damaged model: {path}.\n"
-                "Run: python -c 'from media_engine.models import download_models; "
-                "from pathlib import Path; download_models(Path(\"models\"))'"
+                "Run: python -m media_engine.models"
             )
     return paths
 
@@ -76,8 +75,7 @@ def require_landmarker(model_dir: Path) -> Path:
     if not verify_model(path, LANDMARKER):
         raise ModelError(
             f"Missing or damaged landmarker model: {path}.\n"
-            "Run: python -c 'from media_engine.models import download_models; "
-            "from pathlib import Path; download_models(Path(\"models\"))'"
+            "Run: python -m media_engine.models"
         )
     return path
 
@@ -114,3 +112,7 @@ def download_models(model_dir: Path) -> None:
         finally:
             if temporary is not None:
                 temporary.unlink(missing_ok=True)
+
+
+if __name__ == "__main__":
+    download_models(Path("models"))

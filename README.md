@@ -49,6 +49,3 @@ Run the services in separate terminals in the following order:
    ```bash
    npm run dev
    ```
-
-
-   
