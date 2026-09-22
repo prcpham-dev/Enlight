@@ -42,7 +42,7 @@ Run the services in separate terminals in the following order:
 
 2. **Tracking Engine**
    ```bash
-   python -m media_engine --camera 1
+   python -m media_engine.main --camera 1
    ```
 
 3. **Frontend Client**

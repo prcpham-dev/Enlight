@@ -1,12 +1,14 @@
 """Main camera loop — wires all subsystems together.
 
 Run with:
-    python -m media_engine [--camera 0] [--threshold 0.36]
+    python -m media_engine.main [--camera 0] [--threshold 0.36]
 """
 
+import argparse
 import dataclasses
 import os
 import queue
+import sys
 import time
 from pathlib import Path
 
@@ -14,6 +16,10 @@ import cv2
 from dotenv import load_dotenv
 
 load_dotenv()
+
+if __name__ == "__main__" and not __package__:
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+    __package__ = "media_engine"
 
 from .camera.display import draw
 from .camera.tracker import FaceEngine, FaceTracker, MouthObserver, VisualHistory
@@ -254,3 +260,39 @@ def run(
         store.close()
         cap.release()
         cv2.destroyAllWindows()
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        prog="media_engine",
+        description="Face + voice identity tracker.",
+    )
+    parser.add_argument("--camera", type=int, default=0, metavar="N",
+                        help="Camera device index (default: 0)")
+    parser.add_argument("--threshold", type=float, default=0.36, metavar="T",
+                        help="Face recognition cosine similarity threshold (default: 0.36)")
+    parser.add_argument("--mic", type=int, default=None, metavar="N",
+                        help="Microphone device index (default: system default)")
+    parser.add_argument("--data-dir", type=Path, default=None,
+                        help="Directory containing image and note files (default: project data/)")
+    parser.add_argument("--model-dir", type=Path, default=None,
+                        help="Directory containing face models (default: project models/)")
+    args = parser.parse_args()
+
+    try:
+        run(
+            camera_index=args.camera,
+            threshold=args.threshold,
+            mic_device=args.mic,
+            data_dir=args.data_dir,
+            model_dir=args.model_dir,
+        )
+    except KeyboardInterrupt:
+        sys.exit(0)
+    except Exception as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
